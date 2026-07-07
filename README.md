@@ -8,21 +8,22 @@ I mostly work around React Native, native platform bridges, wallet security, per
 
 #### Current focus
 
-- Leading development of [OneKey App](https://github.com/OneKeyHQ/app-monorepo), a multi-platform wallet supporting 80+ chains.
+- Leading major app engineering work for [OneKey App](https://github.com/OneKeyHQ/app-monorepo), a multi-platform wallet supporting 80+ chains.
 - Building React Native and native modules for iOS, Android, desktop, and WebView-heavy product surfaces.
-- Improving security-sensitive wallet flows, including hardware wallets, air-gapped usage, biometric authentication, and DApp browser reliability.
-- Building startup harnesses and dependency-graph budgets that constrain AI-assisted/vibe-coded changes before they regress first-screen performance.
+- Improving wallet flows where reliability and security matter: hardware-wallet signing, air-gapped flows, biometric authentication, and DApp browser stability.
+- Designing startup CI guardrails for AI-assisted development: first-screen checks, dependency-graph budgets, and regression gates.
 
 #### Selected work
 
-- [OneKey App](https://github.com/OneKeyHQ/app-monorepo): cross-platform wallet application architecture, product delivery, and day-to-day engineering.
+- [OneKey App](https://github.com/OneKeyHQ/app-monorepo): cross-platform app architecture, React Native/native integration, startup performance, and wallet feature delivery.
 - [OneKey native modules](https://github.com/OneKeyHQ/app-modules): native capabilities for React Native wallet features.
-- Performance highlights:
-  - [Mobile startup architecture](https://github.com/OneKeyHQ/app-monorepo/pull/10969): native background runtime, three-bundle split, and cold-start SSR cache; by July 2026, Home first-screen render hit <250ms on iPhone 17 Pro and 600-650ms on Redmi K60 Pro, down from 2025 baselines of ~1.8s and ~3.5s on the same devices.
-  - [Startup CI harnesses](https://github.com/OneKeyHQ/app-monorepo): enforced native/web first-screen dependency-graph budgets so AI-assisted/vibe-coded changes cannot silently pull non-critical modules into startup paths.
+- Startup performance:
+  - [Mobile startup architecture](https://github.com/OneKeyHQ/app-monorepo/pull/10969): introduced native background runtime, three-bundle split, and cold-start SSR cache. In release builds measured on the same devices, Home first-screen render improved from ~1.8s to <250ms on iPhone 17 Pro, and from ~3.5s to 600-650ms on Redmi K60 Pro.
+  - [Startup CI harnesses](https://github.com/OneKeyHQ/app-monorepo): enforced native/web first-screen dependency-graph budgets for AI-assisted development, catching non-critical modules entering startup paths before merge.
   - [Web cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/10112): reduced black-screen time from ~5.1s to ~1.3s with batched IndexedDB reads and render stabilization.
-  - [Desktop cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/12135): slimmed the Electron main bundle from 25.4MB to 5.8MB and cut first-line startup from 647ms to 344ms.
+  - [Desktop cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/12135): slimmed the Electron main bundle from 25.4MB to 5.8MB and cut the Electron main-process startup marker from 647ms to 344ms.
   - [Startup path optimization](https://github.com/OneKeyHQ/app-monorepo/pull/12130): lazy-loaded per-chain dapp providers, Lottie, and lodash-heavy paths so first paint avoids non-critical startup work.
+- Runtime performance:
   - [Runtime responsiveness](https://github.com/OneKeyHQ/app-monorepo/pull/11740): batched bg -> main atom broadcasts and token merge bridge calls to fix production tab-switch freezes.
   - [Token list rendering](https://github.com/OneKeyHQ/app-monorepo/pull/12068): moved derivation to the background runtime and changed price ticks from O(all tokens) to O(changed rows).
 
@@ -32,8 +33,8 @@ I mostly work around React Native, native platform bridges, wallet security, per
   [fetchBundle](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/22023),
   [MaskedView](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/19522), and
   [timer typings](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/19809).
-- React Native ecosystem contributions and maintenance work across wallet, WebView, navigation, native module, and build tooling surfaces.
-- [qiniu_upload](https://github.com/huhuanming/qiniu_upload): Objective-C SDK for batch Qiniu uploads, MIT licensed and used by older iOS/macOS projects.
+- Occasional React Native ecosystem fixes across wallet, WebView, navigation, native modules, and build tooling.
+- [qiniu_upload](https://github.com/huhuanming/qiniu_upload): MIT-licensed Objective-C SDK for batch Qiniu uploads.
 
 #### Tech stack
 
@@ -59,9 +60,3 @@ Engineering     Monorepo · Native Modules · CI/CD · Performance Harnesses
 <a href="https://onekey.so">
   <img src="https://img.shields.io/badge/-OneKey-00DC82?style=flat&logoColor=white" />
 </a>
-
----
-
-<p align="center">
-  <i>Crypto security in my head: air-gapped on top, hot wallets on sides.</i>
-</p>
