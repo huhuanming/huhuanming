@@ -11,13 +11,14 @@ I mostly work around React Native, native platform bridges, wallet security, per
 - Leading development of [OneKey App](https://github.com/OneKeyHQ/app-monorepo), a multi-platform wallet supporting 80+ chains.
 - Building React Native and native modules for iOS, Android, desktop, and WebView-heavy product surfaces.
 - Improving security-sensitive wallet flows, including hardware wallets, air-gapped usage, biometric authentication, and DApp browser reliability.
+- Building startup harnesses and dependency-graph budgets that constrain AI-assisted/vibe-coded changes before they regress first-screen performance.
 
 #### Selected work
 
 - [OneKey App](https://github.com/OneKeyHQ/app-monorepo): cross-platform wallet application architecture, product delivery, and day-to-day engineering.
 - [OneKey native modules](https://github.com/OneKeyHQ/app-modules): native capabilities for React Native wallet features.
 - Performance highlights:
-  - [Mobile startup architecture](https://github.com/OneKeyHQ/app-monorepo/pull/10969): native background runtime, three-bundle split, cold-start SSR cache, and CI startup guards; by July 2026, Home first-screen render hit <250ms on iPhone 17 Pro and 600-650ms on Redmi K60 Pro, down from earlier 2026 baselines of ~2.8s on Android and ~550ms on iPhone 17 Pro.
+  - [Mobile startup architecture](https://github.com/OneKeyHQ/app-monorepo/pull/10969): native background runtime, three-bundle split, cold-start SSR cache, and CI startup harnesses for dependency-graph budgets; by July 2026, Home first-screen render hit <250ms on iPhone 17 Pro and 600-650ms on Redmi K60 Pro, down from earlier 2026 baselines of ~2.8s on Android and ~550ms on iPhone 17 Pro.
   - [Web cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/10112): reduced black-screen time from ~5.1s to ~1.3s with batched IndexedDB reads and render stabilization.
   - [Desktop cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/12135): slimmed the Electron main bundle from 25.4MB to 5.8MB and cut first-line startup from 647ms to 344ms.
   - [Startup path optimization](https://github.com/OneKeyHQ/app-monorepo/pull/12130): lazy-loaded per-chain dapp providers, Lottie, and lodash-heavy paths so first paint avoids non-critical startup work.
@@ -39,7 +40,7 @@ I mostly work around React Native, native platform bridges, wallet security, per
 Frontend        React Native · React · TypeScript · Electron
 Native          iOS · Android · Swift · Objective-C · Kotlin
 Wallet          Multi-chain · Hardware Wallets · Air-gapped Security · WebView
-Engineering     Monorepo · Native Modules · CI/CD · Performance
+Engineering     Monorepo · Native Modules · CI/CD · Performance Harnesses
 ```
 
 #### GitHub stats
