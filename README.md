@@ -16,11 +16,13 @@ I mostly work around React Native, native platform bridges, wallet security, per
 
 - [OneKey App](https://github.com/OneKeyHQ/app-monorepo): cross-platform wallet application architecture, product delivery, and day-to-day engineering.
 - [OneKey native modules](https://github.com/OneKeyHQ/app-modules): native capabilities for React Native wallet features.
-- Recent examples:
-  [web cold start and native startup graph](https://github.com/OneKeyHQ/app-monorepo/pull/12286),
-  [Sentry tracing memory leak fix](https://github.com/OneKeyHQ/app-monorepo/pull/12186),
-  [DApp browser reload loop fix](https://github.com/OneKeyHQ/app-monorepo/pull/12308),
-  [chart WebView bridge and async storage](https://github.com/OneKeyHQ/app-modules/pull/77).
+- Performance highlights:
+  - [Mobile startup architecture](https://github.com/OneKeyHQ/app-monorepo/pull/10969): native background runtime, three-bundle split, cold-start SSR cache, and startup-graph budgets.
+  - [Web cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/10112): reduced black-screen time from ~5.1s to ~1.3s with batched IndexedDB reads and render stabilization.
+  - [Desktop cold startup](https://github.com/OneKeyHQ/app-monorepo/pull/12135): slimmed the Electron main bundle from 25.4MB to 5.8MB and cut first-line startup from 647ms to 344ms.
+  - [Startup bundle trimming](https://github.com/OneKeyHQ/app-monorepo/pull/12130): reduced web initial JS from 27.3MB to 18.2MB and native `startup.background` from 40.77MB to 27.50MB.
+  - [Runtime responsiveness](https://github.com/OneKeyHQ/app-monorepo/pull/11740): batched bg -> main atom broadcasts and token merge bridge calls to fix production tab-switch freezes.
+  - [Token list rendering](https://github.com/OneKeyHQ/app-monorepo/pull/12068): moved derivation to the background runtime and changed price ticks from O(all tokens) to O(changed rows).
 
 #### Open source
 
